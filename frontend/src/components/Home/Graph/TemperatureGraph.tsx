@@ -16,11 +16,18 @@ function TemperatureGraph() {
     }
     
     return (
-        <>
+        <div className="px-1 py-4">
+            <div className="flex flex-row pl-12 items-center">
+                <div className="w-36 h-max">
+                    <h2 className="text-xl align-middle">Temperature</h2>
+                </div>
+                
+                <button className='normal-button' onClick={handleCaptureClick}>Download</button>
+            </div>
             <div className="h-96" id="temperature-graph">
                 <ResponsiveLine 
                     data={temperatureSampleData}
-                    margin={{ top: 50, right: 60, bottom: 50, left: 60 }}
+                    margin={{ top: 30, right: 30, bottom: 50, left: 60 }}
                     xScale={{
                         type: "time",
                         format: "%Y-%m-%dT%H:%M:%SZ",
@@ -65,8 +72,8 @@ function TemperatureGraph() {
                     legends={[]}
                 />
             </div>
-            <button className='normal-button' onClick={handleCaptureClick}>Download</button>
-        </>
+            
+        </div>
         
     )
 }
