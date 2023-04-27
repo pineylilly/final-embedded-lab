@@ -39,7 +39,7 @@ function TemperatureGraph() {
                         stacked: true,
                         reverse: false
                     }}
-                    //xFormat="time:%Y-%m-%dT%H:%M:%SZ"
+                    xFormat="time:%d/%m/%y %H:%M:%S"
                     yFormat=" >-.2f"
                     axisTop={null}
                     axisRight={null}
