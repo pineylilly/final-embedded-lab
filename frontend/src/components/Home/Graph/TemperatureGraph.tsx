@@ -1,5 +1,4 @@
 import { ResponsiveLine } from '@nivo/line'
-import sampleData from "../../../resources/sample/sampledata.json"
 import temperatureSampleData from "../../../resources/sample/sampletemperature.json"
 import downloadjs from 'downloadjs'
 import html2canvas from 'html2canvas'
