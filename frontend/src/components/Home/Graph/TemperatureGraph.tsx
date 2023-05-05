@@ -1,9 +1,13 @@
+import { useState, useEffect } from 'react'
 import { ResponsiveLine } from '@nivo/line'
 import temperatureSampleData from "../../../resources/sample/sampletemperature.json"
 import downloadjs from 'downloadjs'
 import html2canvas from 'html2canvas'
 
 function TemperatureGraph() {
+
+    const [tickValues, setTickValues] = useState<number>();
+
 
     const handleCaptureClick = async () => {
         const Elem = document.querySelector<HTMLElement>('#temperature-graph')
@@ -13,6 +17,17 @@ function TemperatureGraph() {
         const dataURL = canvas.toDataURL('image/png')
         downloadjs(dataURL, 'temperature-graph.png', 'image/png')
     }
+
+    function handleWindowSizeChange() {
+        setTickValues((window.innerWidth <= 760) ? 3 : 7);
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', handleWindowSizeChange);
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange);
+        }
+    }, []);
     
     return (
         <div className="px-1 py-4">
@@ -48,6 +63,7 @@ function TemperatureGraph() {
                         tickSize: 5,
                         tickPadding: 5,
                         tickRotation: 0,
+                        tickValues: tickValues,
                         legend: 'Time',
                         legendOffset: 36,
                         legendPosition: 'middle'
