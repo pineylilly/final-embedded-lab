@@ -5,8 +5,8 @@ import downloadjs from 'downloadjs'
 import html2canvas from 'html2canvas'
 
 function TemperatureGraph() {
-
-    const [tickValues, setTickValues] = useState<number>();
+    
+    const [tickValues, setTickValues] = useState<number>((window.innerWidth <= 760) ? 3 : 7);
 
 
     const handleCaptureClick = async () => {

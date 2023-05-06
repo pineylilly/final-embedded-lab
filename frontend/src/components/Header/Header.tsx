@@ -10,9 +10,15 @@ function Header() {
                 <span className="self-center text-xl font-semibold whitespace-nowrap">FC Ajarn Yam</span>
             </a>
             <div className="items-center justify-between flex w-auto order-1" id="navbar-sticky">
-              <ul className="flex p-4 rounded-lg bg-white flex-row space-x-4 md:space-x-8 mt-0 text-sm font-medium">
+              <ul className="flex flex-row p-4 rounded-lg bg-white space-x-4 md:space-x-8 mt-0 text-sm font-medium">
                 <li>
-                  <a href="#" className="block hover:text-sky-500 rounded" aria-current="page">Edit</a>
+                  <a href="#" className="block hover:text-sky-500 rounded">Dust</a>
+                </li>
+                <li>
+                  <a href="#" className="block hover:text-sky-500 rounded">Temperature</a>
+                </li>
+                <li>
+                  <a href="#" className="block hover:text-sky-500 rounded">Humidity</a>
                 </li>
               </ul>
             </div>
