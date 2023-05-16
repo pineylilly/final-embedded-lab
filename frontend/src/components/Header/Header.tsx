@@ -7,7 +7,7 @@ function Header() {
             <div className="container flex flex-wrap items-center justify-between mx-auto">
             <a href="#" className="ml-2 md:ml-0 flex items-center">
                 <img src={SVGlogo} className="h-6 mr-3 sm:h-9" alt="Logo" />
-                <span className="self-center text-xl font-semibold whitespace-nowrap">FC Ajarn Yam</span>
+                <span className="self-center text-xl font-semibold whitespace-nowrap">Status : Offline</span>
             </a>
             <div className="items-center justify-between flex w-auto order-1" id="navbar-sticky">
               <ul className="flex flex-row p-4 rounded-lg bg-white space-x-4 md:space-x-8 mt-0 text-sm font-medium">
