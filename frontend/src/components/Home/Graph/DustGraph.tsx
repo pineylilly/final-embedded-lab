@@ -4,10 +4,10 @@ import temperatureSampleData from "../../../resources/sample/sampletemperature.j
 import downloadjs from 'downloadjs'
 import html2canvas from 'html2canvas'
 
-function TemperatureGraph(props: { data?: Array<Array<number>>, min?: string, max?: string }) {
+function DustGraph(props: { data?: Array<Array<number>>, min?: string, max?: string }) {
     var result: any = temperatureSampleData
     if (props.data) {
-        result = [{'id' : "temperature",
+        result = [{'id' : "dust",
         "color": "hsl(176, 70%, 50%)", 
         "data" : props.data.map( (element: any) => {
             const g = (new Date(element[0])).toISOString()
@@ -20,7 +20,7 @@ function TemperatureGraph(props: { data?: Array<Array<number>>, min?: string, ma
 
 
     const handleCaptureClick = async () => {
-        const Elem = document.querySelector<HTMLElement>('#temperature-graph')
+        const Elem = document.querySelector<HTMLElement>('#dust-graph')
         if (!Elem) return
     
         const canvas = await html2canvas(Elem)
@@ -43,7 +43,7 @@ function TemperatureGraph(props: { data?: Array<Array<number>>, min?: string, ma
         <div className="px-1 py-4">
             <div className="flex flex-row pl-12 items-center">
                 <div className="pl-3 pr-5 h-max">
-                    <h2 className="text-xl align-middle">Temperature</h2>
+                    <h2 className="text-xl align-middle">Dust</h2>
                 </div>
                 
                 <button className='normal-button flex flex-row items-center' onClick={handleCaptureClick}>
@@ -89,7 +89,7 @@ function TemperatureGraph(props: { data?: Array<Array<number>>, min?: string, ma
                         tickSize: 5,
                         tickPadding: 5,
                         tickRotation: 0,
-                        legend: 'Temperature (°C)',
+                        legend: 'Density (ug/m^3)',
                         legendOffset: -40,
                         legendPosition: 'middle'
                     }}
@@ -110,4 +110,4 @@ function TemperatureGraph(props: { data?: Array<Array<number>>, min?: string, ma
     )
 }
 
-export default TemperatureGraph;
+export default DustGraph;

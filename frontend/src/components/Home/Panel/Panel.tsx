@@ -59,17 +59,18 @@ function Panel() {
         }
 
         const dataSender = `{"data" : {"autoMode" : ${autoMode},"pwmFan" : ${(autoMode === 0) ? pwmFan : 0} , "pwmWater" : ${(autoMode === 0) ? pwmWater : 0}}}`
-        
-        // fetch("https://api.netpie.io/v2/device/message/state", {method : 'PUT',
-        //     headers : {
-        //         "Content-Type": 'application/json',
-        //         "Authorization" : `${token.auth}`,
-        //     },
-        //     body: dataSender}
-        // ).then((req) => {
-        //     console.log("success")
-        // })
-        // .catch((err) => console.log(err))
+        console.log(dataSender)
+
+        fetch("https://api.netpie.io/v2/device/message/state", {method : 'PUT',
+            headers : {
+                "Content-Type": 'application/json',
+                "Authorization" : `${token.auth}`,
+            },
+            body: dataSender}
+        ).then((req) => {
+            console.log("success")
+        })
+        .catch((err) => console.log(err))
 
         fetch("https://api.netpie.io/v2/device/shadow/data", {method : 'PUT',
             headers : {

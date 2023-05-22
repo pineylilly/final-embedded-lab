@@ -1,0 +1,72 @@
+{
+    "Realtime" : {
+        "startValue" : 30,
+        "startUnit" : "minutes",
+        "samplingValue" : 30,
+        "samplingUnit" : "seconds",
+        "minuteBound" : 30
+    },
+    "30 minutes" : {
+        "startValue" : 30,
+        "startUnit" : "minutes",
+        "samplingValue" : 30,
+        "samplingUnit" : "seconds",
+        "minuteBound" : 30
+    },
+    "1 hour" : {
+        "startValue" : 1,
+        "startUnit" : "hours",
+        "samplingValue" : 1,
+        "samplingUnit" : "minutes",
+        "minuteBound" : 60
+    },
+    "2 hours" : {
+        "startValue" : 2,
+        "startUnit" : "hours",
+        "samplingValue" : 2,
+        "samplingUnit" : "minutes",
+        "minuteBound" : 120
+    },
+    "3 hours" : {
+        "startValue" : 3,
+        "startUnit" : "hours",
+        "samplingValue" : 3,
+        "samplingUnit" : "minutes",
+        "minuteBound" : 180
+    },
+    "6 hours" : {
+        "startValue" : 6,
+        "startUnit" : "hours",
+        "samplingValue" : 6,
+        "samplingUnit" : "minutes",
+        "minuteBound" : 360
+    },
+    "12 hours" : {
+        "startValue" : 12,
+        "startUnit" : "hours",
+        "samplingValue" : 12,
+        "samplingUnit" : "minutes",
+        "minuteBound" : 720
+    },
+    "1 day" : {
+        "startValue" : 1,
+        "startUnit" : "days",
+        "samplingValue" : 24,
+        "samplingUnit" : "minutes",
+        "minuteBound" : 1440
+    },
+    "2 days" : {
+        "startValue" : 2,
+        "startUnit" : "days",
+        "samplingValue" : 48,
+        "samplingUnit" : "minutes",
+        "minuteBound" : 2880
+    },
+    "5 days" : {
+        "startValue" : 5,
+        "startUnit" : "days",
+        "samplingValue" : 120,
+        "samplingUnit" : "minutes",
+        "minuteBound" : 7200
+    }
+}
