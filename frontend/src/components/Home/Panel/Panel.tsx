@@ -57,13 +57,36 @@ function Panel() {
             Swal.fire('Fan must be on when activate water')
             return
         }
-        const jsonSender = {
-            "data" : {
-                "autoMode" : autoMode,
-                "pwmFan" : (autoMode === 0) ? pwmFan : 0,
-                "pwmWater" : (autoMode === 0) ? pwmWater : 0 
-            }
-        }
+
+        const dataSender = `{"data" : {"autoMode" : ${autoMode},"pwmFan" : ${(autoMode === 0) ? pwmFan : 0} , "pwmWater" : ${(autoMode === 0) ? pwmWater : 0}}}`
+        
+        // fetch("https://api.netpie.io/v2/device/message/state", {method : 'PUT',
+        //     headers : {
+        //         "Content-Type": 'application/json',
+        //         "Authorization" : `${token.auth}`,
+        //     },
+        //     body: dataSender}
+        // ).then((req) => {
+        //     console.log("success")
+        // })
+        // .catch((err) => console.log(err))
+
+        fetch("https://api.netpie.io/v2/device/shadow/data", {method : 'PUT',
+            headers : {
+                "Content-Type": 'application/json',
+                "Authorization" : `${token.auth}`,
+            },
+            body: dataSender}
+        ).then((req) => {
+            console.log("write shadow success")
+        })
+        .catch((err) => console.log(err))
+
+        Swal.fire('Device setting saving success')
+        
+        setStatus(autoMode, pwmFan, pwmWater)
+
+
 
     }
 

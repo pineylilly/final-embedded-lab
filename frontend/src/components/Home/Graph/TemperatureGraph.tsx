@@ -4,8 +4,18 @@ import temperatureSampleData from "../../../resources/sample/sampletemperature.j
 import downloadjs from 'downloadjs'
 import html2canvas from 'html2canvas'
 
-function TemperatureGraph() {
+function TemperatureGraph(props: { data?: Array<Array<number>>, min?: string, max?: string }) {
+    var result: any = temperatureSampleData
+    if (props.data) {
+        result = [{'id' : "temperature",
+        "color": "hsl(176, 70%, 50%)", 
+        "data" : props.data.map( (element: any) => {
+            const g = (new Date(element[0])).toISOString()
+            return {"x" : g.slice(0,g.length - 5) + 'Z' , "y" : Number(element[1].toFixed(2))}})
+        }]
+    }
     
+    console.log(props.data)
     const [tickValues, setTickValues] = useState<number>((window.innerWidth <= 760) ? 3 : 7);
 
 
@@ -40,12 +50,14 @@ function TemperatureGraph() {
             </div>
             <div className="h-96" id="temperature-graph">
                 <ResponsiveLine 
-                    data={temperatureSampleData}
+                    data={result}
                     margin={{ top: 30, right: 30, bottom: 50, left: 60 }}
                     xScale={{
                         type: "time",
                         format: "%Y-%m-%dT%H:%M:%SZ",
-                        precision: "second"
+                        precision: "second",
+                        min: props.min || 'auto',
+                        max: props.max || 'auto'
                     }}
                     yScale={{
                         type: 'linear',

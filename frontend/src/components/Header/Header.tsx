@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
-import { getStatus } from '../NETPIE/DataFetcher';
+import { getStatus } from '../NETPIE/DataFetcher'
+import { Link } from "react-router-dom"
 
 import logoOffline from "../../resources/logo/logoSpring.svg"
 import logoOnline from "../../resources/logo/logoWinter.svg"
@@ -38,13 +39,13 @@ function Header() {
             <div className="items-center justify-between flex w-auto order-1" id="navbar-sticky">
               <ul className="flex flex-row p-4 rounded-lg bg-white space-x-4 md:space-x-8 mt-0 text-sm font-medium">
                 <li>
-                  <a href="#" className="block hover:text-sky-500 rounded">Dust</a>
+                  <Link to="/dust" className="block hover:text-sky-500 rounded">Dust</Link>
                 </li>
                 <li>
-                  <a href="#" className="block hover:text-sky-500 rounded">Temperature</a>
+                  <Link to="/temperature" className="block hover:text-sky-500 rounded">Temperature</Link>
                 </li>
                 <li>
-                  <a href="#" className="block hover:text-sky-500 rounded">Humidity</a>
+                  <Link to="/humidity" className="block hover:text-sky-500 rounded">Humidity</Link>
                 </li>
               </ul>
             </div>
