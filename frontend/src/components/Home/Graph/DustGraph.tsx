@@ -3,6 +3,7 @@ import { ResponsiveLine } from '@nivo/line'
 import temperatureSampleData from "../../../resources/sample/sampletemperature.json"
 import downloadjs from 'downloadjs'
 import html2canvas from 'html2canvas'
+import export_table_to_csv from '../Panel/CSVExport'
 
 function DustGraph(props: { data?: Array<Array<number>>, min?: string, max?: string }) {
     var result: any = temperatureSampleData
@@ -25,7 +26,11 @@ function DustGraph(props: { data?: Array<Array<number>>, min?: string, max?: str
     
         const canvas = await html2canvas(Elem)
         const dataURL = canvas.toDataURL('image/png')
-        downloadjs(dataURL, 'temperature-graph.png', 'image/png')
+        downloadjs(dataURL, 'dust-graph.png', 'image/png')
+    }
+
+    const handleCSVDownload = async () => {
+        export_table_to_csv("dust_density_ug_m3", "dust_csv")
     }
 
     function handleWindowSizeChange() {
@@ -53,8 +58,15 @@ function DustGraph(props: { data?: Array<Array<number>>, min?: string, max?: str
                     PNG
                 </button>
 
+                <button className='ml-2 normal-button flex flex-row items-center' onClick={handleCSVDownload}>
+                    <svg width="20" height="20" className="ml-[-0.5rem] mr-2">
+                        <path d="M16.59 9H15V4c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v5H7.41c-.89 0-1.34 1.08-.71 1.71l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.63-.63.19-1.71-.7-1.71zM5 19c0 .55.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1H6c-.55 0-1 .45-1 1z"></path>
+                    </svg>
+                    CSV
+                </button>
+
             </div>
-            <div className="h-96" id="temperature-graph">
+            <div className="h-96" id="dust-graph">
                 <ResponsiveLine 
                     data={result}
                     margin={{ top: 30, right: 30, bottom: 50, left: 60 }}

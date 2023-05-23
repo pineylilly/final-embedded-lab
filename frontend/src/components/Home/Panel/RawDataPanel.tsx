@@ -18,7 +18,7 @@ function RawDataPanel (props: {data: Array<Array<number>>, header: string}) {
                     <table className="rounded-md">
                         <thead>
                             <tr>
-                                <th>Time</th>
+                                <th>Time (UTC)</th>
                                 <th>{props.header}</th>
                             </tr>
                         </thead>
