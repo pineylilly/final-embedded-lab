@@ -52,6 +52,7 @@ function DustGraph(props: { data?: Array<Array<number>>, min?: string, max?: str
                     </svg>
                     PNG
                 </button>
+
             </div>
             <div className="h-96" id="temperature-graph">
                 <ResponsiveLine 

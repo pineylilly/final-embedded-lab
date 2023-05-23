@@ -6,6 +6,7 @@ import { getFeed, getRecentFeed } from '../NETPIE/DataFetcher';
 import GraphTimeSwitch from './Panel/GraphTimeSwitch';
 import DustGraph from './Graph/DustGraph';
 import HumidityGraph from './Graph/HumidityGraph';
+import RawDataPanel from './Panel/RawDataPanel';
 
 function Home() {
     const displaySetting: any = {
@@ -164,6 +165,12 @@ function Home() {
                 <Route path='/dust' element={<><DustGraph data={dust} min={timeMin} max={timeMax}/></>} />
                 <Route path='/temperature' element={<><TemperatureGraph data={temperature}  min={timeMin} max={timeMax}/></>} />
                 <Route path='/humidity' element={<><HumidityGraph data={humidity}  min={timeMin} max={timeMax}/></>} />
+            </Routes>
+            <Routes>
+                <Route path='/' element={<><RawDataPanel data={dust} header="Avg Dust (ug/m^3)"/></>} />
+                <Route path='/dust' element={<><RawDataPanel data={dust} header="Avg Dust (ug/m^3)"/></>} />
+                <Route path='/temperature' element={<><RawDataPanel data={temperature} header="Avg Temperature (°C)"/></>} />
+                <Route path='/humidity' element={<><RawDataPanel data={humidity} header="Avg Humidity"/></>} />
             </Routes>
         </div>
     )

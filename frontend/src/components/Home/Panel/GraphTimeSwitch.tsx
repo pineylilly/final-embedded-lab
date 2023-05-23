@@ -7,7 +7,7 @@ function GraphTimeSwitch(props: {displayMode: string, handleDisplayMode: any}) {
 
 
     return (
-        <div className="flex flex-row p-6 md:p-9 md:px-24 w-full items-center">
+        <div className="flex flex-row px-12 py-3 w-full items-center">
             <p className="font-bold pr-2">Display : </p>
             <Menu as="div" className="relative inline-block text-left">
             <Menu.Button className="normal-button">
