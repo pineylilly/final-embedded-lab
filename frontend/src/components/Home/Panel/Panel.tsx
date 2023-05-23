@@ -47,14 +47,9 @@ function Panel() {
 
     function submitData() {
         // Check condition
-        if (autoMode === 0 && !(pwmFan === 0 || (pwmFan >= 50 && pwmFan <= 100))) {
+        if (autoMode === 0 && !(pwmFan >= 0 && pwmFan <= 100)) {
             console.log("PWM Fan value is not okay")
             Swal.fire('Fan speed does not match requirement')
-            return
-        }
-        if (autoMode === 0 && pwmWater === 1 && !(pwmFan >= 50 && pwmFan <= 100)) {
-            console.log("Fan must be on when activate water")
-            Swal.fire('Fan must be on when activate water')
             return
         }
 
@@ -129,12 +124,12 @@ function Panel() {
                         <>
                             <label className="relative inline-flex items-center cursor-pointer">
                                 <input type="text" value={pwmFan} pattern="[0-9]*" className="w-16 border rounded-lg px-2" onChange={(event) => {setPwmFan(parseInt(event.target.value, 10) || 0)}}/>
-                                <span className="ml-3 text-sm font-medium text-black dark:text-gray-300">Adjust Fan (%) [0 for off, 50-100 for on]</span>
+                                <span className="ml-3 text-sm font-medium text-black dark:text-gray-300">Adjust Fan (%) [0% to 100%]</span>
                             </label>
                             <label className="relative inline-flex items-center cursor-pointer">
                                 <input type="checkbox" checked={(pwmWater === 1) ? true : false} className="sr-only peer" onChange={() => {setPwmWater((p) => 1-p)}}/>
                                 <div className={checkboxStyle}></div>
-                                <span className="ml-3 text-sm font-medium text-black dark:text-gray-300">Activate Water [Fan must be on]</span>
+                                <span className="ml-3 text-sm font-medium text-black dark:text-gray-300">Activate Water</span>
                             </label>
                         </>
                         )
