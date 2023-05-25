@@ -18,13 +18,17 @@ Report / Documentation : [Report](Embedded%20Final%20Report.pdf)
 
 ## Project Overview
 
-![Project Prototype](https://lh3.googleusercontent.com/d/1GPeh3sUcS0XwVEy3grJ57jjEjLTvWKHB)
+<p align="center">
+  <img src="https://lh3.googleusercontent.com/d/1GPeh3sUcS0XwVEy3grJ57jjEjLTvWKHB">
+</p>
 
 โครงงานนี้มีจุดประสงค์เพื่อลดปริมาณฝุ่นที่สะสมอยู่ในอากาศและอำนวยความสะดวกสบายให้แก่ผู้ใช้โดยลดอุณหภูมิของอากาศด้วยน้ำ โดยนำ sensor มาใช้เพื่อวัดปริมาณฝุ่น อุณหภูมิของอากาศ และความชื้นในอากาศ เพื่อให้พัดลมกรองฝุ่นทำงานตามสภาพอากาศ และใช้น้ำเพื่อลดอุณหภูมิของอากาศ พร้อมทั้งแสดงปริมาณฝุ่น อุณหภูมิ และความชื้นด้วยกราฟ ทั้งนี้ผู้ใช้สามารถตั้งค่าให้อุปกรณ์ทำงานด้วยตัวเองแบบอัตโนมัติหรือควบคุมอุปกรณ์ด้วยตัวเองได้ตามต้องการผ่านทางเว็บไซต์
 
 ## System Architecture
 
-![System Architecture](https://lh3.googleusercontent.com/d/1bqhGofKZ-cF069ahwtKIcvyixinG7_jm)
+<p align="center">
+  <img src="https://lh3.googleusercontent.com/d/1bqhGofKZ-cF069ahwtKIcvyixinG7_jm">
+</p>
 
 โครงงานนี้ใช้ STM32 NUCLEO-F411RE เป็น microcontroller ในการควบคุมพัดลมและปั้มน้ำผ่าน H-Bridge และต่อ sensor 3 ตัวได้แก่ temperature & humidity sensor (DHT11), dust sensor (SHARP GP2Y1010AU0F), และ ultrasonic sensor (HC-SR04) ข้อมูลจากเซนเซอร์ต่างๆจะส่งมายัง NodeMCU ผ่านทาง UART
 
@@ -70,4 +74,6 @@ Report / Documentation : [Report](Embedded%20Final%20Report.pdf)
 FC Ajarn Yam Krub
 </p>
 
-![Ajarn Yam](https://lh3.googleusercontent.com/d/1NP3pQW7HnPy5UTuwNvI3Lh0eRYXzwu7Z)
+<p align="center">
+  <img src="https://lh3.googleusercontent.com/d/1NP3pQW7HnPy5UTuwNvI3Lh0eRYXzwu7Z">
+</p>
