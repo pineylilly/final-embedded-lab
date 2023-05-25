@@ -9,7 +9,17 @@ Members :
 - Werapat Wangrungroj
 - Nattapong Anansomsin
 
+Website : [Website Final Project Embedded](https://final-project-embedded.netlify.app/)
 
+
+Report / Documentation : [Report](Embedded%20Final%20Report.pdf)
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>
