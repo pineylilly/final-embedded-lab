@@ -6,7 +6,7 @@ function RawDataPanel (props: {data: Array<Array<number>>, header: string}) {
         return [g.slice(0,g.length - 5) + 'Z' , Number(e[1].toFixed(2))]})
     
     return (
-        <div className="flex flex-col p-6 md:p-9 md:px-24 w-full border-t">
+        <div className="flex flex-col p-6 md:p-9 md:px-24 w-full border-t  bg-gray-100">
             <Collapsible 
                 trigger={"Raw Data"} 
                 triggerTagName="div" 

@@ -105,7 +105,7 @@ function Panel() {
     });
 
     return (
-        <div className="flex flex-col p-6 md:p-9 md:px-24 w-full border-b">
+        <div className="flex flex-col p-6 md:p-9 md:px-24 w-full border-b bg-gray-100">
             <Collapsible 
                 trigger={"Device Setting : " + currentStatus} 
                 triggerTagName="div" 
